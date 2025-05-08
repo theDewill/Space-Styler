@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4">
               <LampWallUp className="h-6 w-6 text-accent-gold mr-2" />
-              <span className="font-playfair text-xl font-semibold">Space Styler</span>
+              <span className="font-playfair text-xl font-semibold">SpaceStyler</span>
             </div>
             <p className="text-white/70 mb-6">
               Transform your living spaces with our immersive 3D visualization experience.
