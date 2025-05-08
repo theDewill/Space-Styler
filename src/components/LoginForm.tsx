@@ -14,7 +14,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import RoleSelectionDialog from "./RoleSelectionDialog";
-//import { authCheck } from "@/../fbcodes";
 import { useAuth } from "../contexts/authContext";
 import { useNavigate } from "react-router-dom";
 
