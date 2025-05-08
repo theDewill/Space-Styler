@@ -5,7 +5,12 @@ import { fetchDocumentsByCriteria } from "@/../fbcodes";
 import { doc, getDoc } from "firebase/firestore";
 import { compare } from "bcryptjs";
 
-const AuthContext = createContext(null);
+const AuthContext = createContext({
+  currentUser: null,
+  authCheck: async () => ({ authenticated: false, error: "Context not initialized" }),
+  logout: () => true,
+  loading: true,
+});
 
 export function useAuth() {
   return useContext(AuthContext);
