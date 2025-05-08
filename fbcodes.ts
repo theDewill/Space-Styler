@@ -1,3 +1,4 @@
+// Firebase Functions for Firestore and Storage Operations
 import {
   collection,
   query,
@@ -393,46 +394,8 @@ export async function fetchAndUse3DModel(modelUrl: string): Promise<string | voi
     // Create an object URL from the blob that you can use with your 3D library
     const objectUrl = URL.createObjectURL(modelBlob);
 
-    // Now you can use objectUrl with your 3D loader
-    // Example: load3DModel(objectUrl);
-
-    // Clean up the object URL when done
-    // URL.revokeObjectURL(objectUrl); // Call this when you're done with the URL
-
     return objectUrl;
   } catch (error) {
     console.error("Failed to fetch 3D model:", error);
   }
 }
-
-useEffect(() => {
-  const fetchData = async () => {
-    // Example 1: Fetch all documents from "users" collection
-    const allUsers = await fetchAllDocuments('users');
-
-    // Example 2: Fetch documents with specific criteria
-    const activeUsers = await fetchDocumentsByCriteria('users', { status: 'active' });
-
-    // Example 3: Add a new document
-    const newUserId = await addDocument('users', {
-      name: 'John Doe',
-      email: 'john@example.com'
-    });
-
-    // Example 4: Update documents matching criteria
-    const updatedCount = await updateDocumentByCriteria('users',
-      { department: 'Marketing' },
-      { status: 'onboarding', trainingComplete: false }
-    );
-    console.log(`Updated ${updatedCount} documents`);
-
-    // Example 5: Upload a file (assuming you have a file from input)
-    if (fileInputRef.current?.files?.[0]) {
-      const file = fileInputRef.current.files[0];
-      const fileUrl = await uploadFileToStorage('user-uploads', file, 'profile-pic');
-    }
-  };
-
-  fetchData();
-}, []);
-*/
