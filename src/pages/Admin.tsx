@@ -46,18 +46,18 @@ const Admin = () => {
         <h1 className="text-3xl font-playfair font-semibold mb-8">Hello, {getGreeting()} !</h1>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <Button
+            <Button
             variant="outline"
-            className="h-48 flex flex-col items-center justify-center gap-4 border-2 hover:border-accent-gold hover:text-white transition-all"
+            className="h-48 flex flex-col items-center justify-center gap-4 border-2 hover:border-accent-gold hover:text-white transition-all duration-300 ease-in-out"
             onClick={() => handleNavigate("/dashboard")}
-          >
-            <Monitor className="h-12 w-12" />
-            <span className="text-xl font-playfair">3D Visualizer</span>
-          </Button>
+            >
+            <Monitor className="h-24 w-24 transition-transform duration-300 hover:scale-110" />
+            <span className="text-xl font-playfair ">3D Visualizer</span>
+            </Button>
 
           <Button
             variant="outline"
-            className="h-48 flex flex-col items-center justify-center gap-4 border-2 hover:border-accent-gold hover:text-white transition-all"
+            className="h-48 flex flex-col items-center justify-center gap-4 border-2 hover:border-accent-gold hover:text-white transition-all duration-300 ease-in-out"
             onClick={() => handleNavigate("/catalog")}
           >
             <Sofa className="h-12 w-12" />

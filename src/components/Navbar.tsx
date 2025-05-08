@@ -32,7 +32,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <LampWallUp className="h-7 w-7 text-accent-gold mr-2 animate-subtle-rotate" />
-              <span className="font-playfair text-xl font-bold">Space Styler</span>
+              <span className="font-playfair text-xl font-bold">SpaceStyler</span>
             </Link>
           </div>
 
