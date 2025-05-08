@@ -10,7 +10,7 @@ import {
 } from "firebase/firestore";
 import { compare, hash } from "bcryptjs";
 import { ref, uploadBytes, getDownloadURL, getStorage, getBlob } from "firebase/storage";
-import { db, storage } from "./fb-config"; // Assuming you have this file for initialization
+import { db, storage } from "./fb-config";
 
 /**
  * Fetches documents from a collection that match given criteria
@@ -405,51 +405,6 @@ export async function fetchAndUse3DModel(modelUrl: string): Promise<string | voi
   }
 }
 
-// Usage example:
-/*
-const handleRegistration = async (formData: {
-  username: string;
-  name: string;
-  email: string;
-  pnumber: string;
-  password: string;
-  role: string;
-}) => {
-  const result = await registerUser(formData);
-
-  if (result.success) {
-    console.log(`User registered successfully with ID: ${result.userId}`);
-    // Redirect to login page or automatically log user in
-  } else {
-    console.error(`Registration failed: ${result.error}`);
-    // Show error message to user
-  }
-};
-*/
-
-/*
-const performLogin = async (username: string, password: string) => {
-  const authResult = await authCheck(username, password);
-
-  if (authResult.authenticated) {
-    console.log(`Login successful for user: ${authResult.userId}`);
-    console.log(`User role: ${authResult.role}`);
-
-    // Store user session or redirect based on role
-    if (authResult.role === 'admin') {
-      // Navigate to admin dashboard
-    } else {
-      // Navigate to user dashboard
-    }
-  } else {
-    console.error(`Login failed: ${authResult.error}`);
-    // Show error message to user
-  }
-};
-*/
-
-// Usage in React useEffect example:
-/*
 useEffect(() => {
   const fetchData = async () => {
     // Example 1: Fetch all documents from "users" collection
