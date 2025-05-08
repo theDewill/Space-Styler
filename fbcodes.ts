@@ -1,4 +1,3 @@
-// Firebase Functions for Firestore and Storage Operations
 import {
   collection,
   query,
@@ -226,14 +225,6 @@ export const authCheck = async (
   try {
     // Find user document by username
     const users = await fetchDocumentsByCriteria("f_users", { email });
-
-    // // If no user found with that username
-    // if (users.length === 0) {
-    //   return {
-    //     authenticated: false,
-    //     error: "User not found",
-    //   };
-    // }
 
     // Get the user document
     const user = users[0];
