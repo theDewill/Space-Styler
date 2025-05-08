@@ -124,7 +124,7 @@ const FurnitureCatalog: React.FC = () => {
   };
 
   // Filter models based on search and category
-  let filteredModels: FurnitureItem[] = customModels.filter((item) => {
+  const filteredModels: FurnitureItem[] = customModels.filter((item) => {
     const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = activeCategory === "all" || item.category === activeCategory;
     return matchesSearch && matchesCategory;
