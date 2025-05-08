@@ -1,0 +1,235 @@
+/* Import fonts needed for the lawyer/secondary app */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&family=Montserrat:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* App 1 (Primary/Furniture) Variables */
+    :root {
+        /* Primary App Variables */
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+        --primary: 225 25% 40%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+        --accent: 265 89% 78%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 225 25% 40%;
+        --radius: 0.5rem;
+        --sidebar-background: 220 14% 96%;
+        --sidebar-foreground: 225 25% 25%;
+        --sidebar-primary: 225 25% 40%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 265 89% 78%;
+        --sidebar-accent-foreground: 225 25% 25%;
+        --sidebar-border: 220 13% 91%;
+        --sidebar-ring: 265 89% 78%;
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 217.2 91.2% 59.8%;
+        --primary-foreground: 222.2 47.4% 11.2%;
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --accent: 217.2 91.2% 59.8%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 224.3 76.3% 48%;
+        --sidebar-background: 222.2 47.4% 11.2%;
+        --sidebar-foreground: 210 40% 98%;
+        --sidebar-primary: 217.2 91.2% 59.8%;
+        --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+        --sidebar-accent: 217.2 91.2% 59.8%;
+        --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+        --sidebar-border: 217.2 32.6% 17.5%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+
+    /* App 2 (Secondary/Lawyer) Theme */
+    .law-theme {
+        --background: 40 54% 95%;
+        --foreground: 229 29% 22%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+        --primary: 229 29% 22%;
+        --primary-foreground: 40 54% 95%;
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+        --accent: 47 65% 52%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 47 65% 52%;
+    }
+
+    .law-theme.dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 11.2%;
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 212.7 26.8% 83.9%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    /* Default body style (for Primary/Furniture app) */
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    /* Secondary/Lawyer app body style (only applied when law-theme class is present) */
+    .law-theme body {
+        @apply font-nunito;
+    }
+
+    .law-theme h1,
+    .law-theme h2,
+    .law-theme h3,
+    .law-theme h4 {
+        @apply font-playfair;
+    }
+}
+
+/* Common utilities for both apps */
+@layer utilities {
+    .furniture-item {
+        @apply rounded-md transition-all duration-200 cursor-move hover:shadow-md;
+    }
+
+    .furniture-chair {
+        @apply border-l-4 border-furniture-chair;
+    }
+
+    .furniture-table {
+        @apply border-l-4 border-furniture-table;
+    }
+
+    .furniture-sofa {
+        @apply border-l-4 border-furniture-sofa;
+    }
+
+    .furniture-bed {
+        @apply border-l-4 border-furniture-bed;
+    }
+
+    .furniture-storage {
+        @apply border-l-4 border-furniture-storage;
+    }
+
+    .furniture-decoration {
+        @apply border-l-4 border-furniture-decoration;
+    }
+
+    .canvas-2d {
+        @apply border border-border rounded-md bg-white;
+    }
+
+    .canvas-3d {
+        @apply border border-border rounded-md bg-gradient-to-b from-sky-50 to-white;
+    }
+}
+
+/* Secondary/Lawyer app specific styles */
+.law-theme .blur-backdrop {
+    @apply bg-opacity-70 backdrop-blur-md;
+}
+
+.law-theme .animated-underline {
+    position: relative;
+}
+
+.law-theme .animated-underline::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #d4af37;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.law-theme .animated-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.law-theme .perspective-card {
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.law-theme .perspective-card:hover {
+    transform: translateY(-5px);
+}
+
+.law-theme .gold-button {
+    @apply bg-accent-gold text-white font-montserrat font-medium px-8 py-3 rounded-md transition-all duration-300;
+    box-shadow: 0 4px 6px rgba(212, 175, 55, 0.25);
+}
+
+.law-theme .gold-button:hover {
+    box-shadow: 0 6px 10px rgba(212, 175, 55, 0.35);
+    transform: translateY(-2px);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
