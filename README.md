@@ -5,6 +5,28 @@
 
 Space Styler is an innovative web application designed for furniture retailers and their customers. It offers an immersive 3D visualization experience that allows users to place furniture items in virtual rooms, customize layouts, and visualize their dream spaces before making purchase decisions.
 
+## User interfaces
+
+<div align="center">
+   <img src="./public/ui/Screenshot%202025-05-12%20at%2020.00.51.png" alt="Space Styler User Interface" width="100%">
+   <p><em>Space Styler's Homepage</em></p>
+</div>
+<div align="center">
+   <img src="./public/ui/Screenshot 2025-05-12 at 20.02.35.png" alt="Space Styler User Interface" width="100%">
+   <p><em>Space Styler's 2D view</em></p>
+</div>
+<div align="center">
+   <img src="./public/ui/Screenshot 2025-05-12 at 20.03.28.png" alt="Space Styler User Interface" width="100%">
+   <p><em>Space Styler's 3D view</em></p>
+</div>
+<div align="center">
+   <img src="./public/ui/Screenshot 2025-05-12 at 20.01.04.png" alt="Space Styler User Interface" width="100%">
+   <p><em>Space Styler's product view</em></p>
+</div>
+<div align="center">
+   <img src="./public/ui/Screenshot 2025-05-12 at 20.01.38.png" alt="Space Styler User Interface" width="100%">
+   <p><em>Space Styler's product catalogue</em></p>
+</div>
 
 ## ✨ Features
 
