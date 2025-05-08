@@ -5,7 +5,7 @@ import { fetchDocumentsByCriteria } from "@/../fbcodes";
 import { doc, getDoc } from "firebase/firestore";
 import { compare } from "bcryptjs";
 
-const AuthContext = createContext();
+const AuthContext = createContext(null);
 
 export function useAuth() {
   return useContext(AuthContext);
@@ -16,56 +16,6 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   // Your custom auth check function that verifies against your collection
-  async function authCheck2(credentials) {
-    try {
-      console.log("CREDS", credentials);
-      // Implement your collection-based auth check here
-      // This should match your backend authCheck function
-      const userRef = doc(db, "f_users", credentials.email);
-      console.log("USER REF", userRef);
-      const userSnap = await getDoc(userRef);
-
-      if (userSnap.exists()) {
-        // Here you'd implement your password verification logic
-        // For example, using bcrypt to compare passwords
-        // const match = await bcrypt.compare(credentials.password, userSnap.data().password);
-
-        // For demonstration, we're assuming verification succeeded
-        const userData = userSnap.data();
-
-        const passwordMatch = await compare(credentials.password, userData.password);
-
-        if (!passwordMatch) {
-          return {
-            authenticated: false,
-            error: "Invalid password",
-          };
-        }
-
-        setCurrentUser({
-          email: credentials.email,
-          name: userData.name,
-          role: userData.role,
-          // Add other relevant user data
-        });
-        return {
-          authenticated: true,
-          userId: userData.name,
-          role: userData.role,
-        };
-      }
-      return {
-        authenticated: false,
-        error: "No Such Email Found, Please Register",
-      };
-    } catch (error) {
-      console.error("Authentication error:", error);
-      return {
-        authenticated: false,
-        error: "Authentication failed",
-      };
-    }
-  }
 
   async function authCheck(
     email: string,
