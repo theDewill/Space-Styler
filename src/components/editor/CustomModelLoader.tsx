@@ -198,7 +198,7 @@ const CustomModelLoader: React.FC<CustomModelProps> = ({ item }) => {
             // Show toast notification for error
             toast({
               title: "Model Loading Error",
-              description: `Failed to load 3D model: ${item.name}. The URL may not be directly accessible.`,
+              description: `Failed to load 3D model: ${item.name}. Please try again Drag Drop to model.`,
               variant: "destructive",
             });
           };
@@ -308,7 +308,7 @@ const CustomModelLoader: React.FC<CustomModelProps> = ({ item }) => {
         removeFurniture(item.id);
         toast({
           title: "Model Loading Error",
-          description: `Failed to load 3D model: ${item.name}. Please check if the URL is directly accessible.`,
+          description: `Failed to load 3D model: ${item.name}. Please try again Drag Drop to model.`,
           variant: "destructive",
         });
         setLoadError("Failed to load OBJ model");
