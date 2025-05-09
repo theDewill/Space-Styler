@@ -22,7 +22,7 @@ const Header: React.FC = () => {
               <path d="M5 9h14" />
             </svg>
           </div>
-          <span className="text-lg font-semibold">Space Styler Visualizer</span>
+          <span className="text-lg font-semibold">SpaceStyler Visualizer</span>
         </div>
       </div>
     </header>

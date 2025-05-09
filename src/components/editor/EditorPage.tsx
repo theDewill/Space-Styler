@@ -23,7 +23,7 @@ const EditorPage: React.FC = () => {
     }
 
     if (currentProject) {
-      document.title = `${currentProject.name} | Furniture Visualization Pro`;
+      document.title = `${currentProject.name} | SpaceStyler`;
     }
   }, [currentProject, navigate, id, loadProject]);
 
