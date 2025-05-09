@@ -7,6 +7,7 @@ import {
   addDoc,
   doc,
   updateDoc,
+  deleteDoc,
   DocumentData,
 } from "firebase/firestore";
 import { compare, hash } from "bcryptjs";
@@ -61,9 +62,6 @@ export const deleteDocumentsByCriteria = async (
       console.warn("No documents found matching the criteria");
       return 0;
     }
-
-    // Import deleteDoc function at the top of your file
-    const { deleteDoc } = await import("firebase/firestore");
 
     // Delete each matching document
     const deletePromises = matchingDocs.map((docData) => {
@@ -352,7 +350,6 @@ export async function getStorageItemFromUrl(url: string): Promise<Blob> {
     }
     // If you have a direct download URL
     else {
-      // Option 1: Try direct fetch (might have CORS issues)
       try {
         const response = await fetch(url);
         const blob = await response.blob();
@@ -360,8 +357,6 @@ export async function getStorageItemFromUrl(url: string): Promise<Blob> {
       } catch (fetchError) {
         console.error("Direct fetch failed, likely due to CORS:", fetchError);
 
-        // Option 2: Try to extract the path and use Firebase reference
-        // This is a fallback if you have a download URL but need to access via Firebase
         const storage = getStorage();
         const fileRef = ref(storage, extractPathFromUrl(url));
         const blob = await getBlob(fileRef);

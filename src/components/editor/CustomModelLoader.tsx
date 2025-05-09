@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { useLoader, useThree, ThreeEvent } from "@react-three/fiber";
+import { useLoader, useThree, ThreeEvent, LoaderProto } from "@react-three/fiber";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 import { Text } from "@react-three/drei";
 import { TransformControls } from "@react-three/drei";
